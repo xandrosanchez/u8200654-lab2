@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ArticleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/posts', [ArticleController::class, 'allPosts'])->name('allPosts');
+Route::get('/posts/{code}', [ArticleController::class, 'detailPost'])->name('detailPost');
