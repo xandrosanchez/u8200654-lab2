@@ -21,7 +21,7 @@ class ArticleFactory extends Factory
             'content' => fake()->text(300),
             'date_time_create' => now(),
             'author' => fake()->firstName()
-                        .' '.fake()->lastName(),
+                . ' ' . fake()->lastName(),
         ];
     }
 }

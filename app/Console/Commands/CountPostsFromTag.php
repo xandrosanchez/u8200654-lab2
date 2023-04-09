@@ -34,7 +34,7 @@ class CountPostsFromTag extends Command
             // dd(Tag::withCount('articles')->findOrFail($tagId));
 
             $this->info('Count posts = ' . Tag::withCount('articles')->findOrFail($tagId)->articles_count);
-        } catch(\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
+        } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
             $this->error("Tag with id <$tagId > not exist");
         }
     }

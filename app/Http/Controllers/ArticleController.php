@@ -36,9 +36,9 @@ class ArticleController extends Controller
             $articles->byPostName($validatedRequest['name']);
         }
         if (isset($validatedRequest['tag']) && $validatedRequest['tag']) {
-            $articles->whereHas('tags', function (Builder $query) use($validatedRequest) {
+            $articles->whereHas('tags', function (Builder $query) use ($validatedRequest) {
                 $query->where('name', $validatedRequest['tag']);
-               })->get();
+            })->get();
             // $articles->with(['tags' => function ($query) use($validatedRequest) {
             //     $query->where('name', $validatedRequest['tag']);
             // }]);
@@ -57,4 +57,3 @@ class ArticleController extends Controller
     }
 }
 
- 
