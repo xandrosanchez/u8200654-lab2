@@ -2,8 +2,13 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Article;
+use App\Models\ArticleTag;
+use App\Models\Tag;
+use GuzzleHttp\Promise\Create;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,11 +19,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
+        Article::factory()->count(100)->create();
+        Tag::factory()->count(100)->create();
+        ArticleTag::factory()->count(100)->create();
+        // $this->call([
+        //     $a = ArticleFactory::class,
+        //     $t = TagFactory::class,
+            
         // ]);
     }
 }
